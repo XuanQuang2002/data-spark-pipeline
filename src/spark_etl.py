@@ -179,9 +179,11 @@ def load_to_gold(spark):
     print("Loading to Gold...")
     
     db_url = "jdbc:postgresql://datamart:5432/ecommerce"
+    db_user = os.environ["DATAMART_DB_USER"]
+    db_password = os.environ["DATAMART_DB_PASSWORD"]
     db_properties = {
-        "user": "admin",
-        "password": "password",
+        "user": db_user,
+        "password": db_password,
         "driver": "org.postgresql.Driver",
     }
     
@@ -198,8 +200,8 @@ def load_to_gold(spark):
         host="datamart",
         port=5432,
         dbname="ecommerce",
-        user=db_properties["user"],
-        password=db_properties["password"],
+        user=db_user,
+        password=db_password,
     )
     conn.autocommit = True
     cursor = conn.cursor()
