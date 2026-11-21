@@ -32,7 +32,7 @@ Hệ thống được thiết lập dựa trên Docker Compose với sơ đồ h
 ## Cấu trúc thư mục hiện tại
 
 ```text
-lab15-student-assignment/
+da-spark-pipline/
 ├── dags/
 │   └── ecommerce_etl_spark_dag.py  <-- TODO: Khai báo SparkSubmitOperator và dependencies
 ├── data/
